@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guess the Number</title>
+</head>
+<body>
+
+  <h1 id="head1">Guess the number from 1 to 10</h1>
+  <input id="inp" placeholder="Enter the number...">
+  <button id="button">Check</button>
+  <p id="para">Try it..</p>
+  <p id="ans">Answer</p>
+
+  <script>
+    var input12 = document.getElementById("inp");
+    var btn = document.getElementById("button");
+    var para1 = document.getElementById("para");
+
+    // Generate a random number between 1 and 10
+    var randomNumber = Math.floor(Math.random() * 10) + 1;
+
+    var answer = document.getElementById("ans")
+    
+
+    btn.onclick = function () {
+      // Get the user's input as a number
+      var userGuess = Number(input12.value);
+      
+
+      // Check the guess
+      if (userGuess === randomNumber) {
+        para1.textContent = "🎉 You are right!";
+      } else {
+        para1.textContent = "❌ Wrong! Try again.";
+      }
+      ans.textContent = "Answer is : " + randomNumber
+    };
+  </script>
+<button onclick="location.reload()">Refresh</button>
+
+</body>
+</html>
